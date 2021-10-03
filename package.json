@@ -2,16 +2,18 @@
   "name": "comp229-a1",
   "version": "0.0.0",
   "private": true,
-  "main": "./dist/index.js",
+  "main": "./dist/src/index.js",
   "scripts": {
     "start": "nodemon -w src -e ts,ejs -x npm run dev:start",
     "dev": "node .",
-    "dev:start": "npm-run-all build dev",
+    "dev:start": "npm-run-all killp build dev",
     "copy-assets": "ts-node tools/copyAssets",
     "build": "npm-run-all tsc copy-assets",
-    "tsc": "tsc"
+    "tsc": "tsc",
+    "killp": "kill-port 3000"
   },
   "dependencies": {
+    "bootstrap": "^5.1.1",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "ejs": "~2.6.1",
@@ -22,6 +24,7 @@
     "shelljs": "^0.8.4"
   },
   "devDependencies": {
+    "@types/bootstrap": "^5.1.6",
     "@types/cookie-parser": "^1.4.2",
     "@types/debug": "^4.1.7",
     "@types/ejs": "^3.1.0",
@@ -32,6 +35,7 @@
     "@types/shelljs": "^0.8.9",
     "kill-port": "^1.6.1",
     "nodemon": "^2.0.13",
+    "sass": "^1.42.1",
     "ts-node": "^10.2.1",
     "typescript": "^4.4.3"
   }
