@@ -1,29 +1,28 @@
 import express from "express";
 const router = express.Router();
 
-/* GET home page. */
-router.get('/', function(req:express.Request, res:express.Response, next:express.NextFunction) {
-  res.render('index', { title: 'Express' });
-});
+// Print to the console to let dev know the app is running.
+console.log("Application started.");
 
-router.get('/home', function (req: express.Request, res: express.Response, next: express.NextFunction) {
+/* GET all needed pages */
+router.get('/', function(req:express.Request, res:express.Response, next:express.NextFunction) {
   res.render('index', { title: 'Home' });
 });
 
 router.get('/about', function (req: express.Request, res: express.Response, next: express.NextFunction) {
-  res.render('index', { title: 'About Me' });
+  res.render('about', { title: 'About Me' });
 });
 
 router.get('/projects', function (req: express.Request, res: express.Response, next: express.NextFunction) {
-  res.render('index', { title: 'Projects' });
+  res.render('projects', { title: 'Projects' });
 });
 
 router.get('/services', function (req: express.Request, res: express.Response, next: express.NextFunction) {
-  res.render('index', { title: 'Services' });
+  res.render('services', { title: 'Services' });
 });
 
 router.get('/contact', function (req: express.Request, res: express.Response, next: express.NextFunction) {
-  res.render('index', { title: 'Contact' });
+  res.render('contact', { title: 'Contact' });
 });
 
 export default router;

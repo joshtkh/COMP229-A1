@@ -4,7 +4,6 @@ import cookieParser from "cookie-parser";
 import logger from "morgan";
 import createError from "http-errors";
 import indexRouter from "./routes/index";
-import bootstrap from "bootstrap";
 
 const app = express();
 
