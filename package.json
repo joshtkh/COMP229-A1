@@ -4,7 +4,8 @@
   "private": true,
   "main": "./dist/src/index.js",
   "scripts": {
-    "start": "nodemon -w src -e ts,ejs -x npm run dev:start",
+    "start": "node .",
+    "localstart": "nodemon -w src -e ts,ejs -x npm run dev:start",
     "dev": "node .",
     "dev:start": "npm-run-all killp build dev",
     "copy-assets": "ts-node tools/copyAssets",
