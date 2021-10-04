@@ -1,3 +1,8 @@
+/* app.ts
+Student Name: Joshua Harding
+Student ID: 301186067
+Date: dd/mm/yyyy = 03/10/2021
+ */
 /**
  * Module dependencies.
  */
@@ -10,20 +15,17 @@ import app from "./app";
 /**
  * Get port from environment and store in Express.
  */
-
 const port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
 
 /**
  * Create HTTP server.
  */
-
 const server = http.createServer(app);
 
 /**
  * Listen on provided port, on all network interfaces.
  */
-
 server.listen(port);
 server.on('error', onError);
 server.on('listening', onListening);
@@ -31,7 +33,6 @@ server.on('listening', onListening);
 /**
  * Normalize a port into a number, string, or false.
  */
-
 function normalizePort(val:string) {
   const port = parseInt(val, 10);
 
@@ -51,7 +52,6 @@ function normalizePort(val:string) {
 /**
  * Event listener for HTTP server "error" event.
  */
-
 function onError(error:HttpError) {
   if (error.syscall !== 'listen') {
     throw error;
@@ -79,7 +79,6 @@ function onError(error:HttpError) {
 /**
  * Event listener for HTTP server "listening" event.
  */
-
 function onListening() {
   const addr = server.address();
   const bind = typeof addr === 'string'

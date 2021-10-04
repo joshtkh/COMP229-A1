@@ -1,3 +1,7 @@
+/* index.ts
+Student Name: Joshua Harding
+Student ID: 301186067
+Date: dd/mm/yyyy = 03/10/2021 */
 import express from "express";
 const router = express.Router();
 
