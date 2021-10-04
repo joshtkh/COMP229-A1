@@ -1,4 +1,5 @@
 import express from "express";
+import expressLayouts from "express-ejs-layouts";
 import path from "path";
 import cookieParser from "cookie-parser";
 import logger from "morgan";
@@ -10,7 +11,9 @@ const app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
-
+// I am using express-ejs-layouts to create page layouts
+app.use(expressLayouts);
+app.set('layout', 'layouts/layout');
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -19,9 +22,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'node_modules')));
 
 app.use('/', indexRouter);
-
-// catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.get('*', function(req, res, next) {
   next(createError(404));
 });
 
@@ -33,7 +34,7 @@ app.use(function(err:createError.HttpError, req:express.Request, res:express.Res
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error');
+  res.render('error', { title: 'Error', message: err.message });
 });
 
 //module.exports = app;

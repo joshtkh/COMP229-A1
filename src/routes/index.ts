@@ -6,7 +6,7 @@ console.log("Application started.");
 
 /* GET all needed pages */
 router.get('/', function(req:express.Request, res:express.Response, next:express.NextFunction) {
-  res.render('index', { title: 'Home' });
+  res.render('home', { title: 'Home' });
 });
 
 router.get('/about', function (req: express.Request, res: express.Response, next: express.NextFunction) {
@@ -22,7 +22,7 @@ router.get('/services', function (req: express.Request, res: express.Response, n
 });
 
 router.get('/contact', function (req: express.Request, res: express.Response, next: express.NextFunction) {
-  res.render('contact', { title: 'Contact' });
+  res.render('contact', { title: 'Contact', layout: 'layouts/contact-layout' });
 });
 
 export default router;

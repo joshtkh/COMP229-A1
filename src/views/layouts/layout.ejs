@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- This is the layout page for all pages except Contact Me -->
+<head>
+    <%- include('../partials/head') %>
+    <title><%- title %></title>
+</head>
+<body class="d-flex flex-column min-vh-100">
+    <%- include('../partials/header') %>
+    <main role="main" class="mx-auto my-2 px-4 py-1 flex-shrink-0 border border-dark">
+        <%- body %>
+    </main>
+    <%- include('../partials/footer') %>
+</body>
+</html>
